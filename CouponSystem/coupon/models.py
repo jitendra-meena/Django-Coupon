@@ -4,6 +4,12 @@ from django.contrib.auth.models import User
 from django.conf import settings
 
 class Coupon(models.Model):
+    Coupon_Type = (
+        ('Fixed Amount', 'Fixed Amount'),
+        ('Percentage', 'Percentage'),
+        
+
+    )
     code = models.CharField(max_length=50, unique=True)
     valid_from =  models.DateTimeField()
     valid_to = models.DateTimeField()
@@ -11,7 +17,7 @@ class Coupon(models.Model):
     num_used = models.IntegerField(default=0)
     discount = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(100)])
     is_active = models.BooleanField(default=True)
-
+    coupon_type = models.CharField(max_length = 30, choices = Coupon_Type ,default= 'Fixed Amount')
 
     def __str__(self):
         return self.code
