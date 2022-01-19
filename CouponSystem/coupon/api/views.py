@@ -22,7 +22,10 @@ class Coupon_Use(CreateAPIView):
         print(coupon_code)
         if coupon_code:
             try:
+                now = timezone.now() #changes
                 coupon =  Coupon.objects.get(code = coupon_code)
+                coupon =  Coupon.objects.get(code__iexact = coupon_code,valid_from__let =now,valid_to__gte=now,is_ative = True) changes
+                
                 current_date = datetime.datetime.now()
                 expiry_date = coupon.valid_to
                 if current_date.date() <= expiry_date.date():
