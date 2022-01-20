@@ -7,8 +7,12 @@ An online coupon refers to a discount code or number that can be redeemed on a w
 
 1. admin can add Coupon Fixed Amount and Percentage Amount 
 
-> user can Apply Coupon code and get percentage and Fixed amount
-> show all Coupon code listed 
-> Public and Private Coupon Code 
+2. user can Apply Coupon code and get percentage and Fixed amount
+
+3. show all Coupon code listed 
+
+4. Public and Private Coupon Code 
+
+5. Admin can manage Coupon code and other functionality.
 
 
